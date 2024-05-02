@@ -43,10 +43,21 @@ final class BinarySearch {
   */
   static int binarySearch(final int[] userArray, final int userNumber,
                           final int lowIndex, final int highIndex) {
-    // solve this function!
+    if (lowIndex > highIndex) {
+        return -1; // Element not found
+    }
 
-    return -1;
-  }
+    int midIndex = (lowIndex + highIndex) / 2;
+
+    if (userArray[midIndex] == userNumber) {
+        return midIndex; // Element found at midIndex
+    } else if (userArray[midIndex] > userNumber) {
+        // Search in the left half
+        return binarySearch(userArray, userNumber, lowIndex, midIndex - 1);
+    } else {
+        // Search in the right half
+        return binarySearch(userArray, userNumber, midIndex + 1, highIndex);
+    }
 
   public static void main(final String[] args) {
     System.out.println("Binary Search Program");

@@ -58,6 +58,7 @@ final class BinarySearch {
         // Search in the right half
         return binarySearch(userArray, userNumber, midIndex + 1, highIndex);
     }
+  }
 
   public static void main(final String[] args) {
     System.out.println("Binary Search Program");

@@ -35,11 +35,14 @@ for (let counter = 0; counter < listSize; counter ++) {
 }
 
 // Sort list
+// If the comparison function returns a negative value, a comes before b in the sorted array.
+// If the comparison function returns a positive value, b comes before a in the sorted array.
+// If the comparison function returns 0, the order of a and b remains unchanged in the sorted array.
 randomNumberList.sort((a, b) => a - b)
 console.log(`Sorted list of numbers:\n${randomNumberList}`)
 
 // User input
-const selectedNumberString = prompt(`What number are you searching for in the array`)
+const selectedNumberString = prompt(`\nWhat number are you searching for in the array`)
 const selectedNumber: number = parseInt(selectedNumberString)
 
 if (isNaN(selectedNumber) || selectedNumber > maxValue || selectedNumber < minValue) {
